@@ -4,4 +4,5 @@ class Facility {
     val name: String = ""
     val latitude: String = ""
     val longitude: String = ""
+    val address: String = ""
 }
