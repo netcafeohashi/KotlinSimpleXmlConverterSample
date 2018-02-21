@@ -3,7 +3,7 @@ package com.example.ohashi_pc.geocodingapitest
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
-import com.example.ohashi_pc.geocodingapitest.apis.GeocodigApiService
+import com.example.ohashi_pc.geocodingapitest.apis.GeocodigApi
 import com.example.ohashi_pc.geocodingapitest.apis.entity.GeoXml
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 .baseUrl("https://www.geocoding.jp")
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build()
-        val call = retrofit.create(GeocodigApiService::class.java).getGeocoding("大阪府大阪市北区大深町４−１")
+        val call = retrofit.create(GeocodigApi::class.java).getGeocoding("大阪府大阪市北区大深町４−１")
         call.enqueue(object : Callback<GeoXml> {
             override fun onResponse(call: Call<GeoXml>, response: Response<GeoXml>) {
                 val responseGeoXml = response.body()?.coodinate

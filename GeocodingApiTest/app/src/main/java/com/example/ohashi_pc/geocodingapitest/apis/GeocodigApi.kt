@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GeocodigApiService {
+interface GeocodigApi {
     @GET("/api")
     fun getGeocoding(@Query("q") param: String): Call<GeoXml>
 }
