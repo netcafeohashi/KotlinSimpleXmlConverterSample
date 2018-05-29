@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 .baseUrl("https://www.geocoding.jp")
                 .addConverterFactory(SimpleXmlConverterFactory.create())
                 .build()
-        val call = retrofit.create(GeocodigApi::class.java).getGeocoding("大阪府大阪市北区大深町４−１")
+        val call = retrofit.create(GeocodigApi::class.java).getGeocoding("大阪府大阪市北区大深町")
         call.enqueue(object : Callback<GeoXml> {
             override fun onResponse(call: Call<GeoXml>, response: Response<GeoXml>) {
                 val responseGeoXml = response.body()?.coodinate
